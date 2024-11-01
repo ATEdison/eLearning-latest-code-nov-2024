@@ -1,0 +1,43 @@
+.sta-user-details {
+  border-top: 2px solid #e6e6e6;
+
+  &.form-active {
+    .sta-user-details-btn-edit {
+      &:before {
+        content: attr(data-cancel);
+      }
+    }
+
+    .sta-user-details-content {
+      display: none;
+    }
+
+    .sta-user-details-form {
+      display: block;
+    }
+  }
+}
+
+.sta-user-details-form {
+  display: none;
+}
+
+.sta-user-details-content-item {
+  &.profile_image {
+    img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      object-position: center;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+  }
+}
+
+.sta-user-details-btn-edit {
+  &:before {
+    content: attr(data-edit);
+  }
+}

@@ -1,0 +1,56 @@
+.alert {
+  padding: 25px 20px;
+  box-shadow: $box-shadow;
+  font-size: 14px;
+
+  a {
+    color: #000;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.alert-danger,
+.alert-success {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-left: 5px solid $success;
+}
+
+.alert-danger {
+  border-left-color: $danger;
+}
+
+.alert-dismissible {
+  padding-inline-end: 50px;
+
+  .btn-close {
+    position: absolute;
+    top: calc(50% - 10px);
+    inset-inline-end: 20px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: none;
+    padding: 0;
+    opacity: 1;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: calc(50% - 5px);
+      inset-inline-start: calc(50% - 5px);
+      mask-image: escape-svg($btn-close-bg);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #000;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.sta-copy {
+  background-color: #fbfbfb;
+  border-radius: $border-radius;
+}
+
+.js-copy-on-click {
+  &:before,
+  &:after {
+    animation-delay: unset;
+  }
+
+  &:hover {
+    &:before {
+      color: rgba(#000, 0.8);
+      animation-delay: unset;
+    }
+
+    &:after {
+      color: #fff;
+      background-color: rgba(#000, 0.8);
+      animation-delay: unset;
+    }
+  }
+}
+
+.sta-social-item-twitter {
+    -webkit-mask-image: url(../images/twitter-icon.png);
+    mask-image: url(../images/twitter-icon.png);
+}

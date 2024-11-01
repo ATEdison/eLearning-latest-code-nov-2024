@@ -1,0 +1,90 @@
+.sta-user-dashboard {
+  @extend .sta-hero-banner-2;
+  background-image: url('#{$images_path}/hero-banner-2-bg.png');
+}
+
+.sta-user-dashboard-content {
+  position: relative;
+  z-index: 10;
+}
+
+.sta-user-dashboard-back {
+  display: none;
+  color: rgba(#000, 40%);
+  font-weight: 500;
+  position: relative;
+  padding-inline-start: 24px;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(#000, 40%);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 6px;
+    position: absolute;
+    top: 7px;
+    inset-inline-start: 5px;
+    transform: rotate(90deg);
+    mask-image: url('#{$images_path}/arrow-down.svg');
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: rgba(#000, 40%);
+  }
+}
+
+.sta-heading-icon {
+  width: 36px;
+  margin-inline-end: 10px;
+
+  &.fi {
+    height: 27px;
+    border-radius: $border-radius;
+
+    @media (min-width: 375px) {
+      height: 36px;
+    }
+  }
+
+  @media (min-width: 375px) {
+    width: 48px;
+    margin-inline-end: 24px;
+  }
+}
+
+.sta-rank-heading {
+  color: rgba(#000, 40%);
+}
+
+.sta-user-dashboard-ta-block {
+  border: 2px solid;
+  border-radius: $border-radius;
+}
+
+.sta-user-dashboard-progress {
+  .progress {
+    height: 4px;
+    overflow: visible;
+  }
+
+  .progress-bar {
+    position: relative;
+    overflow: visible;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: $secondary;
+      position: absolute;
+      top: calc(50% - 10px);
+      inset-inline-end: -10px;
+      border-radius: 100%;
+    }
+  }
+}

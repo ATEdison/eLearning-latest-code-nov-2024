@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="Icon_-_UI_-_Time_-_16px" data-name="Icon - UI - Time - 16px">
+    <rect id="Rectangle_3175" data-name="Rectangle 3175" width="16" height="16" transform="translate(0)" fill="none"/>
+    <g id="Group_9589" data-name="Group 9589" transform="translate(7 -295)">
+      <path id="Path_60554" data-name="Path 60554" d="M1,311a8,8,0,0,1,0-16,8,8,0,0,1,0,16Zm0-14a6,6,0,0,0,0,12,6,6,0,0,0,0-12Z"/>
+    </g>
+    <g id="Group_9590" data-name="Group 9590" transform="translate(7 -295)">
+      <path id="Path_60555" data-name="Path 60555" d="M3.515,306.485a.993.993,0,0,1-.707-.293L.322,303.707A1,1,0,0,1,.029,303v-3.777a1,1,0,0,1,2,0v3.363l2.193,2.192a1,1,0,0,1-.707,1.707Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,235 @@
+@use 'sass:math';
+
+.course-preview {
+  @include sta_box_shadow();
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.course-preview[data-status="completed"] {
+  .course-preview-image-status {
+    background-color: $success;
+  }
+}
+
+.course-preview[data-status="lapsed"] {
+  .course-preview-image-status {
+    background-color: $sta_lapsed;
+  }
+}
+
+.course-preview-member {
+  .course-preview-title {
+    padding-inline-end: 50px;
+  }
+
+  .course-progress-icon {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+  }
+}
+
+.course-preview-link {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  z-index: 10;
+  display: block;
+  //display: none; // dev
+  width: 100%;
+  height: 100%;
+}
+
+.course-preview.no-thumbnail .course-preview-image:before {
+  background-image: url('#{$images_path}/course-preview-placeholder.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.course-preview-image {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: math.div(100% * 273, 485);
+    z-index: 1;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 5;
+  }
+}
+
+.course-preview-image-status {
+  @include sta_status_label();
+  position: absolute;
+  top: 24px;
+  inset-inline-start: 24px;
+  z-index: 10;
+}
+
+.course-preview-title {
+  position: relative;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.course-preview-progress {
+  font-size: 14px;
+  font-weight: 500;
+  color: $secondary;
+  line-height: 1;
+
+  &[data-value="100"] {
+    color: $success;
+
+    .progress-bar {
+      background-color: $success;
+    }
+  }
+
+  &[data-value="lapsed"] {
+    color: $sta_lapsed;
+
+    .progress-bar {
+      background-color: $sta_lapsed;
+    }
+  }
+
+  .progress {
+    height: 4px;
+    border-radius: $border-radius;
+  }
+
+  .progress-bar {
+    background-color: $secondary;
+  }
+}
+
+.course-preview.can-enroll-course:not([data-status="completed"]):not([data-status="lapsed"]),
+[data-percentage],
+[data-status] {
+  .course-progress-icon {
+    &:before {
+      mask-image: url('#{$images_path}/arrow-right.svg');
+      background-color: $secondary;
+    }
+  }
+}
+
+[data-percentage="100"],
+[data-status="completed"] {
+  .course-progress-icon {
+    mask-image: none;
+    background-color: $success;
+
+    &:before {
+      mask-image: url('#{$images_path}/check.svg');
+      background-color: #fff;
+    }
+  }
+}
+
+[data-status="lapsed"] {
+  .course-progress-icon {
+    mask-image: none;
+    background-color: $sta_lapsed;
+
+    &:before {
+      mask-image: url('#{$images_path}/time.svg');
+      background-color: #fff;
+    }
+  }
+}
+
+.course-progress-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 5px;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url('#{$images_path}/lock.svg');
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: #000;
+  }
+}
+
+.course-preview-duration,
+.course-preview-categories {
+  position: relative;
+  padding-inline-start: 24px;
+  color: rgba(#000, 40%);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    inset-inline-start: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url('#{$images_path}/course-category-icon.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: rgba(#000, 40%);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: rgba(#000, 40%);
+    text-decoration: none;
+  }
+}
+
+.course-preview-duration {
+  &:before {
+    mask-image: url('#{$images_path}/time.svg');
+  }
+}
+
+.course-preview-meta {
+  border-bottom: 2px solid #e6e6e6;
+
+  > div {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

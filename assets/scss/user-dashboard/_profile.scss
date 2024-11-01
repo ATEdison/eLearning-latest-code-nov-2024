@@ -1,0 +1,203 @@
+.sta-user-dashboard-profile {
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  background-color: #fff;
+}
+
+.sta-user-dashboard-profile-avatar {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.sta-user-dashboard-profile-nationality {
+  span {
+    width: 48px;
+    height: 36px;
+    border-radius: $border-radius;
+  }
+}
+
+.sta-user-dashboard-profile-registration-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url('#{$images_path}/calendar.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #000;
+    margin-inline-end: 8px;
+  }
+}
+
+.icon-user {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  //mask-image: url('#{$images_path}/user.svg');
+  //mask-size: contain;
+  //mask-position: center;
+  //mask-repeat: no-repeat;
+  //background-color: #000;
+  background: url('#{$images_path}/user.svg') center no-repeat;
+}
+
+.sta-user-dashboard-profile-accordion {
+  @extend .sta-accordion;
+	display: none;
+	
+  .accordion-item {
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .accordion-button {
+    padding-top: 27px;
+    padding-bottom: 27px;
+    color: #000;
+
+    &:before {
+      top: calc(50% - 20px);
+    }
+
+    &:after {
+      top: calc(50% - 3px);
+    }
+  }
+
+  .accordion-collapse.show {
+    padding: 0;
+  }
+}
+
+.sta-user-dashboard-profile-quests {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: block;
+    border-bottom: 2px solid #e6e6e6;
+    //padding: 27px 45px 27px 0;
+    padding: 27px 45px;
+    padding-inline-start: 0;
+    position: relative;
+
+    &:last-child {
+      border: none;
+    }
+
+    span,
+    a {
+      text-decoration: none;
+      color: #000;
+
+      &[data-completed="1"] {
+        &:before {
+          mask-image: url('#{$images_path}/check.svg');
+          background-color: #fff;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: calc(50% - 20px);
+          inset-inline-end: 0;
+          background-color: $success;
+          border-radius: $border-radius;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: calc(50% - 8px);
+        inset-inline-end: 20px - 8px;
+        mask-image: url('#{$images_path}/arrow-right.svg');
+        mask-size: contain;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        background-color: $secondary;
+        z-index: 5;
+      }
+    }
+  }
+}
+
+.sta-user-details-content-item.profile_image .user-profile-placeholder-wrapper,
+.user-profile-placeholder-wrapper {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+
+  .user-profile-placeholder {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.user-profile-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    //mask-image: url('#{$images_path}/user-placeholder.svg');
+    //mask-size: contain;
+    //mask-repeat: no-repeat;
+    //mask-position: center;
+    //background-color: #000;
+    background: url('#{$images_path}/user-placeholder.svg') center no-repeat;
+  }
+}

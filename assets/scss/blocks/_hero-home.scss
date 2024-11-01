@@ -1,0 +1,156 @@
+.sta-hero-home {
+  @include decor_line_after();
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.35);
+    z-index: 5;
+  }
+}
+
+.sta-hero-home-bg-video {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.admin-bar .sta-hero-home {
+  @media (min-width: 783px) {
+    min-height: calc(100vh - 32px);
+  }
+}
+
+.sta-hero-home-content {
+  position: relative;
+  z-index: 10;
+}
+
+.sta-hero-home-content-map {
+  @include media-breakpoint-up(lg) {
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+  }
+}
+
+.sta-hero-home-map {
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.sta-hero-home-navigation-wrapper {
+  @extend .sta-hero-slider-navigation-wrapper;
+  display: none;
+}
+
+//.sta-hero-home-navigation {
+//  @extend .sta-hero-slider-navigation;
+//}
+
+.sta-hero-home-navigation-item {
+  @extend .sta-hero-slider-navigation-item;
+}
+
+.hero-home-map-marker-desc-subheading {
+  @extend .sta-hero-slider-slide-item-map-subheading;
+}
+
+.sta-hero-home-map-marker {
+  display: none;
+
+  circle {
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.sta-hero-home-map-marker.transform-hidden .sta-hero-home-map-marker-border {
+  animation: marker_border_hidden 0.8s ease-in-out;
+  animation-delay: 0s;
+}
+
+.sta-hero-home-map-marker.active .sta-hero-home-map-marker-border {
+  animation: marker_border_visible 0.6s ease, marker_border_animation 1s ease-in-out infinite;
+  animation-delay: 0s, 0.6s;
+}
+
+.sta-hero-home-map-marker-border {
+  opacity: 0;
+  transform-origin: 12px 12px;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes marker_border_hidden {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes marker_border_visible {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes marker_border_animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.sta-hero-home-map-marker-desc {
+  position: relative;
+
+  > div {
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      width: 100%;
+    }
+  }
+}

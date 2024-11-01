@@ -1,0 +1,77 @@
+$col_values: (
+  //'1': 100% * 1 / 12,
+  //'2': 100% * 2 / 12,
+  //'3': 100% * 3 / 12,
+  //'4': 100% * 4 / 12,
+  //'5': 100% * 5 / 12,
+  //'6': 100% * 6 / 12,
+  //'7': 100% * 7 / 12,
+  //'8': 100% * 8 / 12,
+  //'9': 100% * 9 / 12,
+  //'10': 100% * 10 / 12,
+  //'11': 100% * 11 / 12,
+  //'12': 100% * 12 / 12,
+  '1-5': 100% * 1.5 / 12,
+  '2-5': 100% * 2.5 / 12,
+  '5-5': 100% * 5.5 / 12,
+  '9-5': 100% * 9.5 / 12,
+  '10-5': 100% * 10.5 / 12,
+  // '10-8': 100% * 10.8 / 12,
+);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    @for $i from 1 through 12 {
+      .col#{$infix}-#{$i} {
+        flex: 0 0 auto;
+        width: 100% * $i / 12;
+      }
+    }
+
+    @each $key, $value in $col_values {
+      .col#{$infix}-#{$key} {
+        flex: 0 0 auto;
+        width: $value;
+      }
+    }
+
+    .col-#{$infix} {
+      flex: 1 0 0;
+    }
+
+    .col#{$infix}-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
+}
+
+$width_utility: (
+  responsive: true,
+  property: width,
+  class: w,
+  values: (
+    'auto': auto,
+    '1-5': 100% * 1.5 / 12,
+    '5-5': 100% * 5.5 / 12,
+    '10-5': 100% * 10.5 / 12,
+    '72': 72px,
+  )
+);
+
+// Loop over each breakpoint
+@each $breakpoint in map-keys($grid-breakpoints) {
+  // Generate media query if needed
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @include generate-utility($width_utility, $infix);
+  }
+}
+
+.container-fluid,
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
+}

@@ -1,0 +1,74 @@
+.sta-contact-social {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-inline-end: 16px;
+
+    &:last-child {
+      margin-inline-end: 0;
+    }
+  }
+}
+
+$contact_type_list: (
+  phone: #8f8f8c,
+  email: #4d6c91,
+  whatsapp: #24d366,
+  twitter: #1d9bf0,
+  facebook: #19afff,
+  instagram: #fe0075,
+);
+
+.sta-contact-social-item {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #8f8f8c;
+  border-radius: 100%;
+  position: relative;
+
+  @each $social_type, $bg in $contact_type_list {
+    &-#{$social_type} {
+      background-color: $bg;
+
+      &:before {
+        mask-image: url('#{$images_path}/social-#{$social_type}.svg');
+      }
+    }
+  }
+
+  &-facebook {
+    background-image: linear-gradient(to bottom, #19afff 0, #0062e0 100%);
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: calc(50% - 12px);
+    inset-inline-start: calc(50% - 12px);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: #fff;
+  }
+
+  &-phone,
+  &-email {
+    &:before {
+      width: 16px;
+      height: 16px;
+      top: calc(50% - 8px);
+      inset-inline-start: calc(50% - 8px);
+    }
+  }
+}

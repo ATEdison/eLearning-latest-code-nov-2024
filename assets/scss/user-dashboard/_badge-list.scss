@@ -1,0 +1,55 @@
+.sta-badge-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    &:last-child {
+      margin-inline-end: 0;
+    }
+  }
+}
+
+.sta-badge {
+  display: inline-block;
+
+  span {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    position: relative;
+
+    &[data-text] {
+      background-color: #d8d8d8;
+
+      &:before {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        content: attr(data-text);
+        font-size: 16px;
+        font-weight: 700;
+        position: absolute;
+        top: 0;
+        inset-inline-start: 0;
+        word-break: break-all;
+        line-height: 1;
+        text-align: center;
+        padding: 10px;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

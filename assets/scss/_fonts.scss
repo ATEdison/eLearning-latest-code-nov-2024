@@ -1,0 +1,131 @@
+.h1,
+h1 {
+  //font-family: $font_displace20;
+  font-size: 32px;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 54px;
+  }
+}
+
+.h2,
+h2 {
+  //font-family: $font_displace20;
+  font-size: 28px;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 48px;
+  }
+}
+
+.h3,
+h3 {
+  font-size: 24px;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 40px;
+  }
+}
+
+.h4,
+h4 {
+  font-size: 20px;
+
+  @media (min-width: 375px) {
+    font-size: 22px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 32px;
+  }
+}
+
+.h5,
+h5 {
+  font-size: 18px;
+
+  @media (min-width: 375px) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+}
+
+.h6,
+h6 {
+  font-size: 16px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 20px;
+  }
+}
+
+.h7 {
+  font-size: 18px;
+}
+
+$font_sizes: (
+  0: 0,
+  12: 12px,
+  14: 14px,
+  18: 18px,
+  20: 20px,
+  24: 24px,
+  27: 27px,
+  30: 30px,
+  32: 32px,
+  40: 40px,
+  46: 46px,
+  54: 54px,
+);
+
+//.ff-gotham {
+//  font-family: $font-family-base;
+//}
+
+//.ff-displace20 {
+//  font-family: $font-displace20;
+//}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+$font_utility: (
+  responsive: true,
+  property: font-size,
+  class: fs,
+  values: $font_sizes
+);
+
+$line_heights: (
+  0: 0,
+  '0-9': 0.9,
+  '1-1': 1.1,
+  '1-2': 1.2,
+  '1-5': 1.5,
+  '1-8': 1.8,
+);
+
+$line_height_utility: (
+  responsive: true,
+  property: line-height,
+  class: lh,
+  values: $line_heights
+);
+
+// Loop over each breakpoint
+@each $breakpoint in map-keys($grid-breakpoints) {
+  // Generate media query if needed
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @include generate-utility($font_utility, $infix);
+    @include generate-utility($line_height_utility, $infix);
+  }
+}

@@ -1,0 +1,56 @@
+.sta-agent-training-status-status {
+  border-top: 2px solid #e6e6e6;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.sta-agent-training-status-status-icon {
+  img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+$circle_size: 16px;
+$circle_gutter: 8px;
+.sta-agent-training-level-stars {
+  display: flex;
+
+  &.platinum,
+  &.gold,
+  &.silver {
+    span:nth-child(1) {
+      background-color: $sta_silver;
+    }
+  }
+
+  &.platinum,
+  &.gold {
+    span:nth-child(2) {
+      background-color: $sta_gold;
+    }
+  }
+
+  &.platinum {
+    span:nth-child(3) {
+      background-color: $sta_platinum;
+    }
+  }
+
+  span {
+    display: block;
+    width: $circle_size;
+    height: $circle_size;
+    margin-inline-end: $circle_gutter;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+
+    //&:last-child {
+    //  margin-inline-end: 0;
+    //  background-color: #e3915a;
+    //}
+  }
+}

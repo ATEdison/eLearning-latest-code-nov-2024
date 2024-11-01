@@ -1,0 +1,98 @@
+.sta-user-course-progress-preview {
+  @include sta_box_shadow();
+  height: 100%;
+  position: relative;
+
+  &[data-percentage="100"] {
+    .sta-user-course-progress-preview-progress {
+      &:before {
+        background-color: $success;
+        border-color: $success;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.sta-user-course-progress-preview-link {
+  display: block;
+  //display: none; // dev
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  z-index: 10;
+}
+
+.sta-user-course-progress-preview-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  color: rgba(#000, 40%);
+
+  @media (min-width: 375px) {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #d9d9d9;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    z-index: 1;
+  }
+
+  span {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.sta-user-course-progress-preview-title {
+  font-size: 16px;
+  font-weight: 500;
+
+  @media (min-width: 375px) {
+    font-size: 20px;
+  }
+}
+
+.sta-user-course-progress-preview-categories {
+  color: rgba(#000, 40%);
+  font-weight: 500;
+}
+
+.sta-circular-percentage {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    transform: rotate(-90deg);
+
+    path {
+      stroke: $secondary;
+    }
+  }
+}

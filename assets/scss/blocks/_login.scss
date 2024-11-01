@@ -1,0 +1,42 @@
+.sta-login-left {
+  @include col_container_padding_start();
+  position: relative;
+  z-index: 10;
+}
+
+.sta-login-right {
+  @include decor_2_after();
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media-breakpoint-down(lg) {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: calc(100vh - 142px - 610px);
+  }
+}
+
+.sta-login-form {
+  @include media-breakpoint-down(lg) {
+    background-color: #fff;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    width: 420px;
+    max-width: 100%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: 20px;
+
+    @media (min-width: 400px) {
+      padding: 30px;
+    }
+  }
+}

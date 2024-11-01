@@ -1,0 +1,49 @@
+.sta-notification-list {
+  p {
+    margin: 0 0 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+
+    h3,
+    h4 {
+      margin: 0;
+    }
+  }
+
+  table th,
+  table td,
+  table tr,
+  table {
+    border: 1px solid #e6e6e6;
+  }
+
+  table th,
+  table td {
+    padding: 5px 10px;
+  }
+}
+
+.sta-notification-list-pagination {
+  margin-top: 20px;
+
+  span,
+  a {
+    padding: 0 5px;
+  }
+}
+
+body.toplevel_page_crb_carbon_fields_container_notifications {
+  #poststuff #post-body.columns-2 {
+    margin: 0;
+  }
+
+  .postbox-container {
+    display: none;
+  }
+}

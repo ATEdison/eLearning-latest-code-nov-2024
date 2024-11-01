@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+.sta-youtube {
+  border-bottom: 2px solid $border-color;
+}
+
+.sta-youtube-iframe {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: math.div(100% * 9, 16);
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+}
+
+.sta-youtube-caption {
+  font-style: italic;
+  font-size: 14px;
+  padding: 16px 0;
+}

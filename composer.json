@@ -1,0 +1,19 @@
+{
+  "name": "netninjas/ewd",
+  "authors": [
+    {
+      "name": "NetNinjas",
+      "email": "support@netninjas.com.au"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "STA\\Inc\\": "inc/"
+    }
+  },
+  "require": {
+    "htmlburger/carbon-fields": "^3.3",
+    "dompdf/dompdf": "^1.2",
+    "google/cloud-text-to-speech": "^1.3"
+  }
+}

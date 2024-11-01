@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="485" height="273" viewBox="0 0 485 273">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Rectangle_2859" data-name="Rectangle 2859" d="M5,0H480a5,5,0,0,1,5,5V273a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V5A5,5,0,0,1,5,0Z" fill="#c1c1c1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b5b5b5"/>
+      <stop offset="1" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e1e1e1"/>
+      <stop offset="1" stop-color="#949494"/>
+    </linearGradient>
+  </defs>
+  <g id="Placeholder_Image" data-name="Placeholder Image" opacity="0.5">
+    <g id="Mask_Group_125" data-name="Mask Group 125" clip-path="url(#clip-path)">
+      <path id="Rectangle_2858" data-name="Rectangle 2858" d="M5,0H480a5,5,0,0,1,5,5V273a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V5A5,5,0,0,1,5,0Z" fill="#c1c1c1"/>
+      <path id="Path_60197" data-name="Path 60197" d="M6792.313,861.435s125.535-50.769,228.293-15.165,148.308,73.187,318.277,28.352,0,110.11,0,110.11h-546.57Z" transform="translate(-6803.283 -759.388)" fill="url(#linear-gradient)"/>
+      <path id="Path_60198" data-name="Path 60198" d="M6804,913.473s77.846-73.714,235.262-29.143,249.844-19.714,249.844-19.714V1040.33H6804Z" transform="translate(-6804 -755.844)" fill="url(#linear-gradient-2)"/>
+    </g>
+  </g>
+</svg>

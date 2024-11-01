@@ -1,0 +1,163 @@
+.sta-leaderboard {
+  border-top: 2px solid #e6e6e6;
+}
+
+.sta-leaderboard-heading {
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.sta-leaderboard-item {
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.sta-leaderboard-item-rank {
+  span {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 100%;
+
+    @include media-breakpoint-up(lg) {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  &[data-value="1"] {
+    span {
+      background-color: #51c041;
+    }
+  }
+
+  &[data-value="2"] {
+    span {
+      background-color: rgba(#51c041, 50%);
+    }
+  }
+
+  &[data-value="3"] {
+    span {
+      background-color: rgba(#51c041, 25%);
+    }
+  }
+}
+
+.sta-leaderboard-item-name {
+  display: flex;
+  align-items: center;
+
+  img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  .user-profile-placeholder-wrapper {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+}
+
+.sta-leaderboard-item-total-badges {
+  color: rgba(#000, 80%);
+}
+
+.sta-leaderboard-item-tier {
+  display: flex;
+  align-items: center;
+
+  //span {
+  //  background-color: $sta_no_tier;
+  //}
+
+  span:nth-child(1),
+  span:nth-child(2),
+  span:nth-child(3) {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    min-width: 16px;
+  }
+
+  span:nth-child(1),
+  span:nth-child(2) {
+    margin-inline-end: 8px;
+  }
+
+  &[data-value="platinum"] {
+    span:nth-child(1) {
+      background-color: $sta_platinum;
+    }
+  }
+
+  &[data-value="platinum"],
+  &[data-value="gold"] {
+    span:nth-child(2) {
+      background-color: $sta_gold;
+    }
+  }
+
+  &[data-value="platinum"],
+  &[data-value="gold"],
+  &[data-value="silver"] {
+    span:nth-child(3) {
+      background-color: $sta_silver;
+    }
+  }
+}
+
+.sta-leaderboard-load-more {
+  &.loading {
+    button {
+      color: transparent;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: calc(50% - 15px);
+        inset-inline-start: calc(50% - 15px);
+        background-image: url('#{$images_path}/loader.gif');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.leaderboard-filter {
+  &.loading {
+    label {
+      span {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          inset-inline-start: calc(100% + 5px);
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-image: url('#{$images_path}/loader.gif');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

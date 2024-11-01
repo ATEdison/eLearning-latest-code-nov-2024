@@ -1,0 +1,123 @@
+//body.single-sfwd-lessons,
+//body.single-sfwd-topic {
+//  .site-main {
+//    display: flex;
+//    align-items: stretch;
+//  }
+//}
+
+.sta-lesson-content {
+  width: 760px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.sta-lesson-navigation {
+  border-bottom: 2px solid $border-color;
+
+  @include media-breakpoint-up(md) {
+    border-bottom: none;
+  }
+}
+
+.sta-lesson-meta-date {
+  color: rgba(#000, 60%);
+}
+
+.sta-lesson-meta {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+}
+
+.sta-lesson-meta-item {
+  display: inline-block;
+  margin-inline-end: 20px;
+
+  @media (min-width: 375px) {
+    margin-inline-end: 32px;
+  }
+
+  &:last-child {
+    margin-inline-end: 0;
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    padding-inline-end: 24px;
+    text-decoration: none;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: calc(50% - 8px);
+      inset-inline-end: 0;
+      mask-size: contain;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: #000;
+    }
+  }
+}
+
+.sta-lesson-meta-item-listen {
+  a {
+    &:after {
+      mask-image: url('#{$images_path}/volume.svg');
+    }
+  }
+}
+
+.sta-lesson-meta-item-download {
+  a {
+    &:after {
+      mask-image: url('#{$images_path}/download-file.svg');
+    }
+  }
+}
+
+.sta-lesson-meta-item-favorite {
+  a {
+    &:after {
+      mask-image: url('#{$images_path}/favorite.svg');
+      background-color: $primary;
+    }
+  }
+}
+
+.btn-mark-complete {
+  &:hover {
+    span {
+      &:after {
+        background-color: #286D2F;
+      }
+    }
+  }
+
+  span {
+    position: relative;
+    padding-inline-end: 16px + 8px;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      mask-image: url('#{$images_path}/arrow-right.svg');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #308138;
+      position: absolute;
+      top: calc(50% - 7px);
+      inset-inline-end: 0;
+    }
+  }
+}

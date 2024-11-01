@@ -1,0 +1,72 @@
+.sta-notification-list-item {
+  border-bottom: 2px solid #e6e6e6;
+
+  &.new {
+    .sta-notification-list-item-post-time {
+      span {
+        &:after {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background-color: $sta_red;
+          position: absolute;
+          top: calc(50% - 4px);
+          inset-inline-start: calc(100% + 8px);
+        }
+      }
+    }
+  }
+}
+
+.sta-notification-list-item-post-time {
+  color: rgba(#000, 40%);
+
+  span {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.sta-notification-list-item-read-more {
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 10px;
+  text-decoration: none;
+
+  &:before {
+    content: attr(data-more);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: $secondary;
+    position: absolute;
+    inset-inline-start: 0;
+    bottom: 0;
+  }
+}
+
+.sta-notification-list-item.active {
+  .sta-notification-list-item-read-more {
+    &:before {
+      content: attr(data-less);
+    }
+  }
+
+  .sta-notification-list-item-excerpt {
+    display: none;
+  }
+
+  .sta-notification-list-item-message {
+    display: block;
+  }
+}
+
+.sta-notification-list-item-message {
+  display: none;
+}

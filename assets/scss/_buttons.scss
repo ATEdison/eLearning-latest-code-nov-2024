@@ -1,0 +1,92 @@
+.btn {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover, .menu-login a:hover, .menu-register a:hover {
+  color: #286D2F;
+  background-color: #fff;
+  border-color: var(--bs-btn-border-color);
+}
+
+.btn-secondary {
+  @include button-variant($secondary, $secondary, #fff);
+}
+
+.btn-outline-black {
+  @include button-outline-variant(#000);
+}
+.btn-outline-green {
+  @include button-outline-variant(#308138);
+}
+
+
+
+.btn-trash {
+  @include button-variant(rgba(#000, 5%), transparent);
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius;
+  padding: 0;
+  min-width: 40px;
+  max-width: 40px;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url('#{$images_path}/trash.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #000;
+    position: absolute;
+    top: calc(50% - 8px);
+    inset-inline-start: calc(50% - 8px);
+  }
+}
+
+.btn-copy {
+  @include button-variant(rgba(#000, 5%), transparent);
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius;
+  padding: 0;
+
+  .icon {
+    &:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask-image: url('#{$images_path}/copy.svg');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #000;
+      position: absolute;
+      top: calc(50% - 8px);
+      inset-inline-start: calc(50% - 8px);
+    }
+  }
+}
+
+.btn-download {
+  @extend .btn-trash;
+
+  &:before {
+    mask-image: url('#{$images_path}/download.svg');
+  }
+}
+
+.btn-toggle-course-navigation {
+  @extend .btn-trash;
+
+  &:before {
+    mask-image: url('#{$images_path}/sidebar.svg');
+    // transition: transform 0.3s ease;
+  }
+}

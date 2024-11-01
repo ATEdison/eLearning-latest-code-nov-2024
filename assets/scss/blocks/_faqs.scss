@@ -1,0 +1,124 @@
+.sta-accordion {
+  border-top: 2px solid #e6e6e6;
+
+  .accordion-item {
+    border: none;
+    border-bottom: 2px solid #e6e6e6;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .accordion-button {
+    padding: 40px 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: $secondary;
+    padding-inline-end: 45px;
+
+    &:not(.collapsed) {
+      padding-bottom: 28px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      inset-inline-end: 0;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(#000, 5%);
+      border-radius: $border-radius;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 6px;
+      background-image: none;
+      mask-image: url('#{$images_path}/arrow-down.svg');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: #000;
+      position: absolute;
+      top: 32px + 10px + 6px;
+      inset-inline-end: 20px - 5px;
+    }
+  }
+
+  .accordion-body {
+    padding: 0;
+  }
+
+  .accordion-collapse {
+    &.show {
+      padding-bottom: 48px;
+    }
+  }
+}
+
+.sta-faqs-filter {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-inline-end: 24px;
+    margin-bottom: 14px;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      margin-inline-end: 0;
+      margin-bottom: 24px;
+    }
+
+    &:last-child {
+      margin-inline-end: 0;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked + label {
+      @include media-breakpoint-up(lg) {
+        padding-inline-start: 10px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        inset-inline-start: 0;
+        bottom: 0;
+        background-color: $secondary;
+        display: block;
+        width: 100%;
+        height: 2px;
+
+        @include media-breakpoint-up(lg) {
+          top: 0;
+          width: 2px;
+          height: 100%;
+        }
+      }
+    }
+
+    + label {
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-block;
+      padding-bottom: 10px;
+      position: relative;
+
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+// paths
+$images_path: '../images';
+
+// colors
+$primary: #3e6e2d;
+$secondary: #009aac;
+$highlight-color: $secondary;
+// $gradient: linear-gradient(to right, #37def9, #4262ff);
+$body-color: #000;
+$sta_red: #ff424c;
+$sta_pink: #78006e;
+$sta_light: #fbfbfb;
+$link-color: $secondary;
+$success: #389741;
+$info: $secondary;
+$warning: #ff8300;
+$danger: $sta_red;
+$border-color: #e6e6e6;
+$sta_blue_viloet: #646EC8;
+
+$sta_no_tier: #000;
+$sta_bronze: #e3915a;
+$sta_silver: #c0c0c0;
+$sta_gold: #ffd700;
+$sta_platinum: #adb2cb;
+$sta_lapsed: #78006e;
+
+$sta_colors: (
+  'sta-red': $sta_red,
+  'sta-pink': $sta_pink,
+  'sta-light': $sta_light,
+  'sta-no-tier': $sta_no_tier,
+  'sta-bronze': $sta_bronze,
+  'sta-silver': $sta_silver,
+  'sta-gold': $sta_gold,
+  'sta-platinum': $sta_platinum,
+  'sta-blue-viloet': $sta_blue_viloet,
+);
+
+// fonts
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base: 'Open Sans', $font-family-sans-serif;
+//$font_displace20: 'Displace 2.0', $font-family-sans-serif;
+$line-height-base: 1.8;
+
+$enable-negative-margins: true;
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+  12: 12px,
+  15: 15px,
+  16: 16px,
+  20: 20px,
+  22: 22px,
+  24: 24px,
+  25: 25px,
+  26: 26px,
+  30: 30px,
+  32: 32px,
+  35: 35px,
+  40: 40px,
+  44: 44px,
+  45: 45px,
+  48: 48px,
+  50: 50px,
+  55: 55px,
+  56: 56px,
+  60: 60px,
+  64: 64px,
+  70: 70px,
+  80: 80px,
+  90: 90px,
+  100: 100px,
+  120: 120px,
+  130: 130px,
+  150: 150px,
+  180: 180px,
+  200: 200px,
+  250: 250px,
+  280: 280px,
+  300: 300px,
+  400: 400px,
+  450: 450px,
+) !default;
+
+$grid-gutter-width: 64px;
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  xxxl: 1650px,
+) !default;
+// scss-docs-end grid-breakpoints
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1370px,
+  xxxl: 1575px,
+) !default;
+// scss-docs-end container-max-widths
+
+// buttons
+$btn-padding-x: 23px;
+$btn-padding-y: 12px;
+$btn-line-height: 1;
+$btn-font-weight: 500;
+$btn-border-radius: 5px;
+$btn-border-width: 2px;
+
+// headings
+$headings-margin-bottom: 20px;
+$paragraph-margin-bottom: 30px;
+$headings-font-weight: 700;
+
+// shadow
+$box-shadow: 0 10px 20px rgba(#000, .2);
+$box-shadow-hover: 0 10px 30px rgba(#000, .3);
+
+// form
+$input-border-color: #e6e6e6;
+$input-border-radius: 5px;
+$form-check-input-checked-bg-color: #000;
+$form-check-input-checked-border-color: #000;
+$input-btn-focus-color: rgba(#000, 25%);
+$input-focus-border-color: #000;
+
+// nav tabs
+$nav-tabs-border-width: 2px;
+$nav-tabs-border-color: #e6e6e6;
+
+// border
+$border-width: 2px;
+$border-radius: 5px;
+
+// utilities
+$utilities: (
+  "margin-start": (
+    responsive: true,
+    property: margin-inline-start,
+    class: ms,
+    values: map-merge($spacers, (auto: auto))
+  ),
+  "margin-end": (
+    responsive: true,
+    property: margin-inline-end,
+    class: me,
+    values: map-merge($spacers, (auto: auto))
+  ),
+  "padding-start": (
+    responsive: true,
+    property: padding-inline-start,
+    class: ps,
+    values: $spacers
+  ),
+  "padding-end": (
+    responsive: true,
+    property: padding-inline-end,
+    class: pe,
+    values: $spacers
+  ),
+  "text-align": (
+    responsive: true,
+    property: text-align,
+    class: text,
+    values: (
+      start: start,
+      end: end,
+      center: center,
+    )
+  ),
+);

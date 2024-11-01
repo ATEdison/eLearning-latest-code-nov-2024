@@ -1,0 +1,24 @@
+html[dir="rtl"] {
+  .sta-user-dashboard-linklist a:before,
+  .sta-user-dashboard-linklist-download a:before {
+    transform: rotate(180deg);
+  }
+
+  @include media-breakpoint-down(lg) {
+    .btn-toggle-user-menu-dropdown:after {
+      transform: rotate(90deg);
+    }
+
+    .btn-dropdown-back:before {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .sta-user-dashboard-back:before {
+    transform: rotate(-90deg);
+  }
+
+  .course-progress-icon:before {
+    transform: rotate(180deg);
+  }
+}

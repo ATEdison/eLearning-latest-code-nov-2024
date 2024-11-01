@@ -1,0 +1,131 @@
+.sta-user-dashboard-linklist-download,
+.sta-user-dashboard-linklist {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    //padding: 24px 24px 24px #{36px + 16px};
+    padding: 24px;
+    padding-inline-start: 36px + 16px;
+    border-bottom: 2px solid #e6e6e6;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      //padding: 32px 24px 32px #{48px + 16px};
+      padding: 32px 24px;
+      padding-inline-start: 48px + 16px;
+    }
+
+    &.linklist-item-notifications.has-notifications {
+      &:after {
+        content: attr(data-value);
+        position: absolute;
+        top: 24px;
+        inset-inline-start: 36px - 16px;
+        display: flex;
+        width: 16px;
+        height: 16px;
+        background-color: $sta_red;
+        color: #fff;
+        font-size: 10px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+
+        @include media-breakpoint-up(md) {
+          top: 32px;
+          inset-inline-start: 48px - 16px;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      top: 24px;
+      inset-inline-start: 0;
+      //mask-size: contain;
+      //mask-repeat: no-repeat;
+      //mask-position: center;
+      //background-color: #000;
+
+      @include media-breakpoint-up(md) {
+        width: 48px;
+        height: 48px;
+        top: 32px;
+      }
+    }
+  }
+
+  $type_list: (
+    'training_achievement': 'badge.svg',
+    'leaderboards': 'global-rank.svg',
+    'notifications': 'notifications.svg',
+    'my_details': 'user.svg',
+    'general_preferences': 'general-preferences.svg',
+    'communications': 'communications.svg',
+    'security': 'privacy.svg',
+    'referrals': 'referral.svg',
+  );
+  @each $type, $svg in $type_list {
+    .linklist-item-#{$type} {
+      &:before {
+        //mask-image: url('#{$images_path}/#{$svg}');
+        background: url('#{$images_path}/#{$svg}') center no-repeat;
+      }
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask-image: url('#{$images_path}/arrow-right.svg');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: $secondary;
+      position: absolute;
+      top: calc(50% - 8px);
+      inset-inline-end: 0;
+    }
+  }
+}
+
+.sta-user-dashboard-linklist-download {
+  li {
+    padding: 24px 0;
+    border-top: 2px solid #e6e6e6;
+    border-bottom: none;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  a {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.sta-user-dashboard-linklist .linklist-item-leaderboards{
+	display: none;
+}
+

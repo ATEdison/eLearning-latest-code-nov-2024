@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+.sta-text-image-text {
+  &:not(.order-2) {
+    @include col_container_padding_start();
+  }
+
+  &.order-2 {
+    @include col_container_padding_end();
+  }
+}
+
+.sta-text-image-image {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: math.div(100% * 584, 896);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

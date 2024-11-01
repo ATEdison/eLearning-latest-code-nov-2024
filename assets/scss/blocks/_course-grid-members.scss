@@ -1,0 +1,57 @@
+.sta-course-grid-members {
+
+}
+
+.sta-cta-get-accredited {
+  @include sta_message();
+  background-color: $primary;
+  color: #fff;
+
+  &:after {
+    background-color: #5d892f;
+  }
+}
+
+.course-grid-filter-category {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  li {
+    margin-inline-end: 24px;
+
+    &:last-child {
+      margin-inline-end: 0;
+    }
+
+    input {
+      display: none;
+
+      &:checked + label {
+        &:after {
+          background-color: $secondary;
+        }
+      }
+
+      + label {
+        font-weight: 500;
+        line-height: 1;
+        position: relative;
+        padding-bottom: 10px;
+        cursor: pointer;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: transparent;
+          position: absolute;
+          inset-inline-start: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+$sta_color_utility: (
+  responsive: false,
+  property: background-color,
+  class: bg,
+  values: $sta_colors,
+);
+
+$sta_border_color_utility: (
+  responsive: false,
+  property: border-color,
+  class: border,
+  values: $sta_colors,
+);
+
+@include generate-utility($sta_color_utility, '');
+@include generate-utility($sta_border_color_utility, '');

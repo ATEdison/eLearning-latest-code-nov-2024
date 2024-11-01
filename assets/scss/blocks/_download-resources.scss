@@ -1,0 +1,46 @@
+.sta-download-resources-heading {
+  padding-inline-start: 24px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url('#{$images_path}/download-file.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    background-color: #000;
+    position: absolute;
+    top: 2px;
+    inset-inline-start: 0;
+  }
+}
+
+.text-content .sta-download-resources-resources,
+.sta-download-resources-resources {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 0;
+
+    &:before {
+      display: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon {
+
+  }
+}

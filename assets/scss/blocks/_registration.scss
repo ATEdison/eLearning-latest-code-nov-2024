@@ -1,0 +1,252 @@
+.sta-reg-agreements {
+  background-color: #fbfbfb;
+  border-radius: $border-radius;
+}
+
+.sta-reg-heading {
+  padding-inline-start: 24px + 48px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: calc(50% - 24px);
+    inset-inline-start: 0;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #000;
+  }
+}
+
+.sta-reg-heading-role {
+  &:before {
+    mask-image: url('#{$images_path}/role.svg');
+  }
+}
+
+.sta-reg-heading-profile {
+  &:before {
+    mask-image: url('#{$images_path}/user.svg');
+  }
+}
+
+.sta-reg-heading-work {
+  &:before {
+    mask-image: url('#{$images_path}/work.svg');
+  }
+}
+
+.sta-reg-heading-terms {
+  &:before {
+    mask-image: url('#{$images_path}/terms.svg');
+  }
+}
+
+$sta_reg_form_step_count: 5;
+@include media-breakpoint-down(xl) {
+  .sta-form-registration {
+    @for $step from 1 through $sta_reg_form_step_count {
+      &[data-step="#{$step}"] {
+        .sta-form-registration-progress-mobile {
+          ul:after {
+            width: calc((100% - 36px) * #{$step - 1} / 3);
+          }
+
+          li:nth-child(#{$step}) {
+            ~ li .icon:before,
+            .icon:before {
+              background-color: transparent;
+            }
+
+            ~ li .icon:after,
+            .icon:after {
+              display: none;
+            }
+
+            ~ li .icon:before {
+              border-color: #707070;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sta-form-registration-progress-mobile {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      &:after,
+      &:before {
+        content: '';
+        display: block;
+        width: calc(100% - 36px);
+        max-width: calc(100% - 36px);
+        height: 2px;
+        background-color: #e6e6e6;
+        position: absolute;
+        top: 10px - 1px;
+        inset-inline-start: 18px;
+        z-index: 1;
+      }
+
+      &:after {
+        width: 0;
+        z-index: 2;
+        background-color: $success;
+      }
+    }
+
+    li {
+      padding-top: 32px;
+      position: relative;
+      font-weight: 500;
+      color: #000;
+      font-size: 14px;
+      z-index: 10;
+
+      .icon {
+        display: block;
+        width: 36px;
+        height: 20px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        inset-inline-start: calc(50% - 18px);
+
+        &:before {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          border: 2px solid $success;
+          background-color: $success;
+          position: absolute;
+          top: 0;
+          inset-inline-start: calc(50% - 10px);
+          border-radius: 100%;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: 10px - 8px;
+          inset-inline-start: calc(50% - 8px);
+          mask-image: url('#{$images_path}/check.svg');
+          mask-size: contain;
+          mask-repeat: no-repeat;
+          mask-position: center;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .sta-form-registration {
+    @for $step from 1 through $sta_reg_form_step_count {
+      &[data-step="#{$step}"] {
+        .sta-reg-step:nth-child(#{$step}) {
+          .sta-reg-left-icon {
+            background-color: transparent;
+          }
+
+          .sta-reg-left-icon:before {
+            display: none;
+          }
+
+          .sta-reg-left:after,
+          ~ .sta-reg-step .sta-reg-left:before,
+          ~ .sta-reg-step .sta-reg-left:after {
+            background-color: #e6e6e6;
+          }
+
+          ~ .sta-reg-step .sta-reg-left-icon {
+            border-color: #e6e6e6;
+            background-color: transparent;
+          }
+
+          + .sta-reg-step .sta-reg-left-icon {
+            border-color: #707070;
+          }
+        }
+      }
+    }
+  }
+
+  .sta-reg-step:last-child .sta-reg-left:after,
+  .sta-reg-step:first-child .sta-reg-left:before {
+    display: none;
+  }
+
+  .sta-reg-left {
+    position: relative;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      top: 80px + 24px + 10px + 8px;
+      inset-inline-start: 10px - 1px;
+      background-color: $success;
+    }
+
+    &:before {
+      top: 0;
+      height: 80px + 24px - 10px - 8px;
+    }
+  }
+
+  .sta-reg-left-icon {
+    position: absolute;
+    top: 80px + 24px - 10px;
+    inset-inline-start: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    //border: 2px solid #707070;
+    //background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid $success;
+    background-color: $success;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: calc(50% - 8px);
+      inset-inline-start: calc(50% - 8px);
+      mask-image: url('#{$images_path}/check.svg');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #fff;
+    }
+  }
+}
+
+.sta-label-black {
+  .form-check-input.is-invalid ~ .form-check-label,
+  .was-validated .form-check-input:invalid ~ .form-check-label {
+    color: #000;
+  }
+}

@@ -1,0 +1,2 @@
+<?php
+// empty course steps

@@ -1,0 +1,72 @@
+// variables
+@import "variables";
+
+// libs
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/slick-carousel/slick/slick";
+@import "../../node_modules/slick-carousel/slick/slick-theme";
+// @import "../../node_modules/featherlight/src/featherlight";
+// @import "../../node_modules/featherlight/src/featherlight.gallery";
+@import '../../node_modules/flag-icons/sass/flag-icons';
+@import '../../node_modules/@primer/css/tooltips/index';
+
+// global
+@import "mixins";
+@import "utilities";
+@import "fonts";
+@import "grid";
+@import "buttons";
+@import "form";
+
+// theme
+@import "theme";
+@import "header";
+@import "footer";
+
+@import 'components/course-preview';
+@import 'components/alert';
+@import 'components/agent-quick-links';
+@import 'components/agent-training-status';
+@import 'components/user-course-progress-preview';
+@import 'components/copy';
+@import 'components/breadcrumb';
+@import 'components/course-summary';
+@import 'components/course-last-activity';
+@import 'components/course-tabs';
+@import 'components/course-module-content';
+@import 'components/course-module-step-item';
+@import 'components/course-lesson';
+@import 'components/course-navigation';
+@import 'components/course-quiz';
+@import 'components/course-progress';
+@import 'components/welcome-prompt';
+
+// blocks
+@import 'blocks/hero-slider';
+@import 'blocks/text-image';
+@import 'blocks/hero-banner';
+@import 'blocks/course-intro';
+@import 'blocks/login';
+@import 'blocks/hero-banner-2';
+@import 'blocks/course-grid-members';
+@import 'blocks/faqs';
+@import 'blocks/get-in-touch';
+@import 'blocks/youtube';
+@import 'blocks/download-resources';
+@import 'blocks/registration';
+@import 'blocks/reset-password';
+@import 'blocks/hero-home';
+@import 'blocks/quick-quiz';
+
+// user dashboard
+@import 'user-dashboard/profile';
+@import 'user-dashboard/linklist';
+@import 'user-dashboard/badge-list';
+@import 'user-dashboard/tier-badges';
+@import 'user-dashboard/leaderboard';
+@import 'user-dashboard/notification-list';
+@import 'user-dashboard/user-details';
+@import 'user-dashboard/page';
+
+// rtl
+@import "rtl";

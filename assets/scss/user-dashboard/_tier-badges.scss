@@ -1,0 +1,93 @@
+.sta-tier-badge {
+  @extend .me-10;
+  @extend .me-sm-32;
+
+  &:last-child {
+    @extend .me-0;
+  }
+
+  position: relative;
+  display: block;
+  width: 72px;
+  height: 72px;
+
+  &.unlocked {
+    span {
+      width: 48px;
+      height: 48px;
+      top: 2px;
+      inset-inline-start: calc(50% - 24px);
+      mask-image: url('#{$images_path}/badge.svg');
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - 24px);
+    inset-inline-start: calc(50% - 24px);
+    background-color: $sta_bronze;
+    z-index: 2;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 100%;
+    background-color: $sta_bronze;
+  }
+
+  span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: calc(50% - 8px);
+    inset-inline-start: calc(50% - 8px);
+    mask-image: url('#{$images_path}/lock.svg');
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: #000;
+    z-index: 10;
+  }
+}
+
+.sta-tier-badge-bronze {
+  &:after,
+  &:before {
+    background-color: $sta_bronze;
+  }
+}
+
+.sta-tier-badge-silver {
+  &:after,
+  &:before {
+    background-color: $sta_silver;
+  }
+}
+
+.sta-tier-badge-gold {
+  &:after,
+  &:before {
+    background-color: $sta_gold;
+  }
+}
+
+.sta-tier-badge-platinum {
+  &:after,
+  &:before {
+    background-color: $sta_platinum;
+  }
+}

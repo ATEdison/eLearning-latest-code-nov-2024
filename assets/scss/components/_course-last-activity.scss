@@ -1,0 +1,10 @@
+.sta-course-last-activity {
+  &:not(.sidebar) {
+    background-color: #fbfbfb;
+    border-radius: $border-radius;
+  }
+}
+
+.sta-course-last-activity-text {
+  color: rgba(#000, 40%);
+}

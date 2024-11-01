@@ -1,0 +1,12 @@
+<svg id="Icon_-_UI_-_Volume_-_16px" data-name="Icon - UI - Volume - 16px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <rect id="Rectangle_3106" data-name="Rectangle 3106" width="16" height="16" fill="none"/>
+  <g id="Group_9469" data-name="Group 9469" transform="translate(-76 -88)">
+    <path id="Path_60467" data-name="Path 60467" d="M82,102a1,1,0,0,1-.707-.293L78.586,99H77a1,1,0,0,1-1-1V95a1,1,0,0,1,1-1h1.586l2.707-2.707A1,1,0,0,1,83,92v9a1,1,0,0,1-.617.924A.988.988,0,0,1,82,102Zm-4-5h1a1,1,0,0,1,.707.293L81,98.586V94.414l-1.293,1.293A1,1,0,0,1,79,96H78Z"/>
+  </g>
+  <g id="Group_9470" data-name="Group 9470" transform="translate(-76 -88)">
+    <path id="Path_60468" data-name="Path 60468" d="M85,102a1,1,0,0,1-.707-1.707,6.252,6.252,0,0,0,0-8.589,1,1,0,0,1,1.417-1.411,8.249,8.249,0,0,1,0,11.414A1,1,0,0,1,85,102Z"/>
+  </g>
+  <g id="Group_9471" data-name="Group 9471" transform="translate(-76 -88)">
+    <path id="Path_60469" data-name="Path 60469" d="M87.6,104a1,1,0,0,1-.582-1.813c.089-.068,2.381-1.818,2.381-6.187,0-4.434-2.358-6.169-2.381-6.187a1,1,0,1,1,1.162-1.626C88.313,88.28,91.4,90.548,91.4,96s-3.087,7.72-3.219,7.813A.994.994,0,0,1,87.6,104Z"/>
+  </g>
+</svg>

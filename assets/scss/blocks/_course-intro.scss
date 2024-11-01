@@ -1,0 +1,29 @@
+.sta-course-public-resource {
+  @include sta_box_shadow();
+}
+
+.sta-course-public-resource-desc {
+  color: rgba(#000, 40%);
+}
+
+
+.sta-course-public-resource-download {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    mask-image: url('#{$images_path}/download.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #009aac;
+  }
+}
